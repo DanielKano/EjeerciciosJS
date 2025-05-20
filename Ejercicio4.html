@@ -1,0 +1,42 @@
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Estilizar Elemento</title>
+  <style>
+    #estilizable {
+      width: 300px;
+      height: 100px;
+      background-color: lightgray;
+      margin-top: 20px;
+      text-align: center;
+      line-height: 100px;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="estilizarElemento()">Aplicar Estilos</button>
+  <div id="estilizable">Texto de ejemplo</div>
+
+  <script>
+    // Función que aplica varios estilos a un elemento
+    function estilizarElemento() {
+      const elemento = document.getElementById('estilizable');
+
+      elemento.style.cssText = `
+        border: 2px dashed #333;
+        border-radius: 15px;
+        padding: 20px;
+        font-family: 'Arial', sans-serif;
+        box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+        background-color: white;
+        color: #333;
+      `;
+    }
+  </script>
+
+</body>
+</html>

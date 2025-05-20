@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Animación con JavaScript</title>
+  <style>
+    #elementoAnimado {
+      width: 100px;
+      height: 100px;
+      background:linear-gradient(135deg, #f3f1f1, #d0ff00);
+      border-radius: 100%;
+      position: relative;
+      transition: transform 0.1s;
+    }
+
+    body {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="animarElemento()">Iniciar animación</button>
+  <div id="elementoAnimado"></div>
+
+  <script>
+    function animarElemento() {
+      const elemento = document.getElementById('elementoAnimado');
+      let posicion = 0;
+
+      const intervalo = setInterval(() => {
+        if (posicion >= 300) {
+          clearInterval(intervalo);
+        } else {
+          posicion += 5;
+          elemento.style.transform = `translateX(${posicion}px)`;
+        }
+      }, 30);
+    }
+  </script>
+
+</body>
+</html>

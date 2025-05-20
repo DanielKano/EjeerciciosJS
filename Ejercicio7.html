@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Hover con JavaScript</title>
+  <style>
+    #hoverJs {
+      width: 200px;
+      height: 100px;
+      background-color: lightblue;
+      text-align: center;
+      line-height: 100px;
+      margin: 50px auto;
+      transition: all 0.3s ease;
+      border: 2px solid #888;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="hoverJs">Pasa el mouse aquí</div>
+
+  <script>
+    // Simular hover con eventos mouseenter y mouseleave
+    const elementoHover = document.getElementById('hoverJs');
+
+    elementoHover.addEventListener('mouseenter', function () {
+      this.style.backgroundColor = '#f0f0f0';
+      this.style.transform = 'scale(1.05)';
+    });
+
+    elementoHover.addEventListener('mouseleave', function () {
+      this.style.backgroundColor = '';
+      this.style.transform = '';
+    });
+  </script>
+
+</body>
+</html>

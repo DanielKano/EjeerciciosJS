@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Estilos Dinámicos</title>
+</head>
+<body>
+
+  <p id="textoDestacado">Este texto será destacado dinámicamente</p>
+  <button onclick="crearEstilosDinamicos()">Aplicar estilo dinámico</button>
+
+  <script>
+    function crearEstilosDinamicos() {
+      const estilo = document.createElement('style');
+
+      estilo.innerHTML = `
+        .destacado {
+          background-color: yellow;
+          font-weight: bold;
+          padding: 5px;
+          border-left: 3px solid orange;
+        }
+      `;
+
+      document.head.appendChild(estilo);
+
+      document.getElementById('textoDestacado').classList.add('destacado');
+    }
+  </script>
+
+</body>
+</html>

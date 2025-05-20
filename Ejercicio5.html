@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive con JavaScript</title>
+  <style>
+    #responsive {
+      background-color: #f0f0f0;
+      border: 2px solid #999;
+      margin: 20px;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="responsive">Este texto se adapta al tamaño de la pantalla</div>
+
+  <script>
+    function ajustarEstilosResponsive() {
+      const elemento = document.getElementById('responsive');
+
+      if (window.innerWidth < 768) {
+        elemento.style.fontSize = '14px';
+        elemento.style.padding = '10px';
+      } else {
+        elemento.style.fontSize = '18px';
+        elemento.style.padding = '20px';
+      }
+    }
+
+    window.addEventListener('load', ajustarEstilosResponsive);
+    window.addEventListener('resize', ajustarEstilosResponsive);
+  </script>
+
+</body>
+</html>
